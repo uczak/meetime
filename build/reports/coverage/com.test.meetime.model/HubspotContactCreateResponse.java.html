@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HubspotContactCreateResponse.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">meetime</a> &gt; <a href="index.source.html" class="el_package">com.test.meetime.model</a> &gt; <span class="el_source">HubspotContactCreateResponse.java</span></div><h1>HubspotContactCreateResponse.java</h1><pre class="source lang-java linenums">package com.test.meetime.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+
+<span class="nc bnc" id="L6" title="All 42 branches missed.">@Data</span>
+public class HubspotContactCreateResponse {
+
+<span class="nc" id="L9">    private String id;</span>
+<span class="nc" id="L10">    private Properties properties;</span>
+
+<span class="nc" id="L12">    private String createdAt;</span>
+<span class="nc" id="L13">    private String updatedAt;</span>
+<span class="nc" id="L14">    private boolean archived;</span>
+
+<span class="nc bnc" id="L16" title="All 174 branches missed.">    @Data</span>
+    public static class Properties {
+
+        @JsonProperty(&quot;createdate&quot;)
+<span class="nc" id="L20">        private String createdDate;</span>
+
+        @JsonProperty(&quot;hs_all_contact_vids&quot;)
+<span class="nc" id="L23">        private String allContactVids;</span>
+
+        @JsonProperty(&quot;hs_associated_target_accounts&quot;)
+<span class="nc" id="L26">        private String associatedTargetAccounts;</span>
+
+        @JsonProperty(&quot;hs_currently_enrolled_in_prospecting_agent&quot;)
+<span class="nc" id="L29">        private String currentlyEnrolledInProspectingAgent;</span>
+
+        @JsonProperty(&quot;hs_is_contact&quot;)
+<span class="nc" id="L32">        private String isContact;</span>
+
+        @JsonProperty(&quot;hs_is_unworked&quot;)
+<span class="nc" id="L35">        private String isUnworked;</span>
+
+        @JsonProperty(&quot;hs_lifecyclestage_lead_date&quot;)
+<span class="nc" id="L38">        private String lifecycleStageLeadDate;</span>
+
+        @JsonProperty(&quot;hs_marketable_status&quot;)
+<span class="nc" id="L41">        private String marketableStatus;</span>
+
+        @JsonProperty(&quot;hs_marketable_until_renewal&quot;)
+<span class="nc" id="L44">        private String marketableUntilRenewal;</span>
+
+        @JsonProperty(&quot;hs_membership_has_accessed_private_content&quot;)
+<span class="nc" id="L47">        private String membershipAccessedPrivateContent;</span>
+
+        @JsonProperty(&quot;hs_object_id&quot;)
+<span class="nc" id="L50">        private String objectId;</span>
+
+        @JsonProperty(&quot;hs_object_source&quot;)
+<span class="nc" id="L53">        private String objectSource;</span>
+
+        @JsonProperty(&quot;hs_object_source_id&quot;)
+<span class="nc" id="L56">        private String objectSourceId;</span>
+
+        @JsonProperty(&quot;hs_object_source_label&quot;)
+<span class="nc" id="L59">        private String objectSourceLabel;</span>
+
+        @JsonProperty(&quot;hs_pipeline&quot;)
+<span class="nc" id="L62">        private String pipeline;</span>
+
+        @JsonProperty(&quot;hs_prospecting_agent_actively_enrolled_count&quot;)
+<span class="nc" id="L65">        private String prospectingAgentActivelyEnrolledCount;</span>
+
+        @JsonProperty(&quot;hs_registered_member&quot;)
+<span class="nc" id="L68">        private String registeredMember;</span>
+
+        @JsonProperty(&quot;hs_sequences_actively_enrolled_count&quot;)
+<span class="nc" id="L71">        private String sequencesActivelyEnrolledCount;</span>
+
+        @JsonProperty(&quot;lastmodifieddate&quot;)
+<span class="nc" id="L74">        private String lastModifiedDate;</span>
+
+        @JsonProperty(&quot;lifecyclestage&quot;)
+<span class="nc" id="L77">        private String lifecycleStage;</span>
+
+        @JsonProperty(&quot;num_notes&quot;)
+<span class="nc" id="L80">        private String numNotes;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

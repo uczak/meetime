@@ -1,0 +1,10 @@
+swagger:
+  server-url: https://hubspot-api-968271651730.us-central1.run.app
+
+hubspot:
+  client-id: d90039b5-b654-4caa-8dad-c50d2bcd310b
+  client-secret: ef84b9cc-ad72-4191-99ee-0e65ee75e50e
+  redirect-uri: https://hubspot-api-968271651730.us-central1.run.app/oauth/callback
+  server-url: https://hubspot-api-968271651730.us-central1.run.app
+  url: https://api.hubapi.com
+  scope: "oauth crm.objects.contacts.read crm.objects.contacts.write"

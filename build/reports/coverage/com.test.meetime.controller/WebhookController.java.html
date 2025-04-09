@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WebhookController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">meetime</a> &gt; <a href="index.source.html" class="el_package">com.test.meetime.controller</a> &gt; <span class="el_source">WebhookController.java</span></div><h1>WebhookController.java</h1><pre class="source lang-java linenums">package com.test.meetime.controller;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
+
+
+<span class="fc" id="L14">@Slf4j</span>
+@Validated
+@RestController
+@RequestMapping(&quot;/webhook&quot;)
+@Tag(name = &quot;Webhook&quot;, description = &quot;Receives events sent from HubSpot.&quot;)
+<span class="fc" id="L19">public class WebhookController {</span>
+
+    @Operation(
+            summary = &quot;Receive HubSpot Webhook Events&quot;,
+            description = &quot;This endpoint is triggered by HubSpot when a configured event occurs.&quot;,
+            responses = {
+                    @ApiResponse(
+                            responseCode = &quot;200&quot;,
+                            description = &quot;Webhook received successfully.&quot;
+                    ),
+                    @ApiResponse(
+                            responseCode = &quot;400&quot;,
+                            description = &quot;Invalid request payload.&quot;
+                    )
+            }
+    )
+    @PostMapping
+    public ResponseEntity&lt;Void&gt; receiveWebhook(@RequestBody String payload,
+                                               @RequestHeader Map&lt;String, String&gt; headers) {
+<span class="nc" id="L38">        log.info(&quot;Webhook request:&quot;);</span>
+<span class="nc" id="L39">        log.info(&quot;Headers: &quot; + headers);</span>
+<span class="nc" id="L40">        log.info(&quot;Payload: &quot; + payload);</span>
+<span class="nc" id="L41">        return ResponseEntity.ok().build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

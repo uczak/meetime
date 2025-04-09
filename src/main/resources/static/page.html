@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Autenticação concluída</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<img src="logo.png" alt="Meetime Logo">
+<h1>Pronto! Sua conta foi autenticada com sucesso.<br>Já é possível adicionar novos contatos.</h1>
+
+<h3>Exemplo:</h3>
+<pre>
+curl -X 'POST' \
+  'https://hubspot-api-968271651730.us-central1.run.app/contact' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "email": "guilherme.uczak@gmail.com",
+  "lastname": "Uczak",
+  "firstname": "Guilherme"
+}'
+    </pre>
+</body>
+</html>

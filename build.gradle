@@ -1,0 +1,100 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.11'
+	id 'io.spring.dependency-management' version '1.1.6'
+	id 'jacoco'
+}
+
+group = 'com.test.meetime'
+version = '0.0.1-SNAPSHOT'
+
+jacoco {
+	toolVersion = "0.8.8"
+}
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+ext {
+	set('springCloudVersion', "2021.0.3")
+}
+
+//gradle test jacocoTestReport
+jacocoTestReport {
+	group = "Reporting"
+	reports {
+		xml.enabled true
+		csv.enabled false
+		html.destination file("${buildDir}/reports/coverage")
+	}
+}
+
+def numTests = 0
+
+test {
+	beforeTest { descriptor ->
+		logger.lifecycle("Running test: " + descriptor)
+		numTests++
+	}
+
+	doLast {
+		println "\nnumTests executed: ${numTests}"
+	}
+
+	finalizedBy jacocoTestReport
+}
+
+jacocoTestCoverageVerification {
+	violationRules {
+		rule {
+			failOnViolation = true
+			element = 'CLASS'
+			limit {
+				minimum = 0.0
+			}
+		}
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	implementation 'org.projectlombok:lombok:1.18.26'
+	annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+	//Spring Cache
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+
+	//swagger
+	implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'
+
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+//import org.apache.commons.text.RandomStringGenerator;
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+test {
+	useJUnitPlatform()
+	java.toolchain {
+		languageVersion.set(JavaLanguageVersion.of(17))
+	}
+}
+
+// to run coverage verification during the build (and fail when appropriate)
+check.dependsOn jacocoTestCoverageVerification
