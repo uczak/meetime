@@ -2,8 +2,9 @@
 
 Este projeto tem como objetivo demonstrar a integração com a API do HubSpot utilizando OAuth 2.0 (Authorization Code Flow), com a implementação de endpoints para geração de URL de autorização, troca de código por token, criação de contatos e recebimento de webhooks.
 
-- projeto publicado em :https://hubspot-api-968271651730.us-central1.run.app/swagger-ui/index.html
-- para realziar o processo de autenticação siga os passos 
+- Projeto publicado em :https://hubspot-api-968271651730.us-central1.run.app/swagger-ui/index.html
+- Para realizar o processo de autenticação siga os passos em: **Descrição do fluxo:**
+- O arquivo com a descrição problema está em : https://github.com/uczak/meetime/blob/main/src/main/resources/static/doc.pdf?raw=true
 ## 📌 Objetivo
 
 Avaliar habilidades técnicas em:
@@ -120,7 +121,7 @@ Este projeto pode ser facilmente implantado no Google Cloud usando o serviço **
 - Billing ativado no projeto.
 - Conceder acesso ao user:
 - - Acessar o painel IAM
-- - Editar a Role do user e adicionar as Roles **Cloud Builder Editor** e **Storage Admin**
+- - Editar a Role do User e adicionar as Roles **Cloud Builder Editor** e **Storage Admin**
 - Na pasta raiz do projeto execute os seguintes comandos:
 - Habilita as APIs:
   ```bash
@@ -137,7 +138,7 @@ Este projeto pode ser facilmente implantado no Google Cloud usando o serviço **
   ```bash
   gcloud config set project [PROJECT_ID]
 
-- defina o ambiente como hlg na varaivel:
+- defina o ambiente como hlg na variável:
   ```
   spring:
     profiles:
