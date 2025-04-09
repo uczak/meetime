@@ -2,6 +2,7 @@
 
 Este projeto tem como objetivo demonstrar a integração com a API do HubSpot utilizando OAuth 2.0 (Authorization Code Flow), com a implementação de endpoints para geração de URL de autorização, troca de código por token, criação de contatos e recebimento de webhooks.
 
+- projeto publicado em :https://hubspot-api-968271651730.us-central1.run.app/swagger-ui/index.html
 ## 📌 Objetivo
 
 Avaliar habilidades técnicas em:
@@ -50,7 +51,7 @@ A aplicação utiliza o fluxo **Authorization Code Flow**, conforme documentaç�
 
 ### 🔁 Fluxograma do Fluxo OAuth 2.0
 
-![Fluxo OAuth](hubspot-oauth-flow.png)
+![Fluxo OAuth](https://github.com/uczak/meetime/blob/main/src/main/resources/static/hubspot-oauth-flow.png)
 
 **Descrição do fluxo:**
 
@@ -68,7 +69,7 @@ A aplicação utiliza o fluxo **Authorization Code Flow**, conforme documentaç�
 - Endpoint configurado para receber eventos do tipo `contact.creation`
 - Processamento do evento e logging das informações.
 - exemplo:
-  ![Fluxo OAuth](webhook-event.png)
+  ![Fluxo OAuth](https://github.com/uczak/meetime/blob/main/src/main/resources/static/webhook-event.png)
 ---
 
 ## 🚀 Como Executar
