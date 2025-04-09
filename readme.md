@@ -3,6 +3,7 @@
 Este projeto tem como objetivo demonstrar a integração com a API do HubSpot utilizando OAuth 2.0 (Authorization Code Flow), com a implementação de endpoints para geração de URL de autorização, troca de código por token, criação de contatos e recebimento de webhooks.
 
 - projeto publicado em :https://hubspot-api-968271651730.us-central1.run.app/swagger-ui/index.html
+- para realziar o processo de autenticação siga os passos 
 ## 📌 Objetivo
 
 Avaliar habilidades técnicas em:
@@ -58,8 +59,21 @@ A aplicação utiliza o fluxo **Authorization Code Flow**, conforme documentaç�
 2. O usuário é redirecionado ao HubSpot e autoriza o app.
 3. O HubSpot envia o `code` ao endpoint de callback (`/auth/callback`).
 4. A aplicação troca o `code` pelo `access_token`. O token é armazenado em cache para reutilização em chamadas à API do HubSpot.
-5. O cliente já pode fazer requisições para o server, para a criação de contacts.
-6. O server autenticado faz a integração com o hubspot para criar o contact.
+5. O cliente já pode fazer requisições para o server, para a criação de 
+contatos. Acesse o swagger para realizar a chamda de cadastro de contato 
+ou utilize um client externo como Postman. Exemplo de requisição:
+  ```bash
+   curl -X 'POST' \
+   'https://hubspot-api-968271651730.us-central1.run.app/contact' \
+   -H 'accept: application/json' \
+   -H 'Content-Type: application/json' \
+   -d '{
+   "email": "guilherme.uczak@gmail.com",
+   "lastname": "Uczak",
+   "firstname": "Guilherme"
+   }'
+   ```
+6. O server autenticado faz a integração com o hubspot para criar o contato.
 7. A API Webhook recebe a notificação do registro criado.
 ---
 
