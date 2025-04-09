@@ -50,8 +50,7 @@ forma saberiamos se o client já está autenticado.
 A aplicação utiliza o fluxo **Authorization Code Flow**, conforme documentação oficial do HubSpot.
 
 ### 🔁 Fluxograma do Fluxo OAuth 2.0
-
-![Fluxo OAuth](https://github.com/uczak/meetime/blob/main/src/main/resources/static/hubspot-oauth-flow.png)
+ ![Fluxo OAuth](https://github.com/uczak/meetime/blob/main/src/main/resources/static/hubspot-oauth-flow.PNG?raw=true)
 
 **Descrição do fluxo:**
 
@@ -69,7 +68,7 @@ A aplicação utiliza o fluxo **Authorization Code Flow**, conforme documentaç�
 - Endpoint configurado para receber eventos do tipo `contact.creation`
 - Processamento do evento e logging das informações.
 - exemplo:
-  ![Fluxo OAuth](https://github.com/uczak/meetime/blob/main/src/main/resources/static/webhook-event.png)
+  ![Fluxo OAuth](https://github.com/uczak/meetime/blob/main/src/main/resources/static/webhook-event.PNG?raw=true)
 ---
 
 ## 🚀 Como Executar
