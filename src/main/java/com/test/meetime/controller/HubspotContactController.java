@@ -2,8 +2,8 @@ package com.test.meetime.controller;
 
 import com.test.meetime.DTO.PropertiesDTO;
 import com.test.meetime.model.*;
-import com.test.meetime.service.ContactService;
-import com.test.meetime.service.HubSpotTokenService;
+import com.test.meetime.service.HubspotContactService;
+import com.test.meetime.service.HubspotTokenService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -24,13 +24,13 @@ import javax.validation.constraints.NotNull;
 @RestController
 @RequestMapping("/contact")
 @Tag(name = "Contact", description = "Endpoints responsible for the integration with Contact objects.")
-public class ContactController {
+public class HubspotContactController {
 
     @Autowired
-    private ContactService contactService;
+    private HubspotContactService hubspotContactService;
 
     @Autowired
-    private HubSpotTokenService hubSpotTokenService;
+    private HubspotTokenService hubSpotTokenService;
 
     @Operation(
             summary = "Retrieve a list of HubSpot contacts.",
@@ -71,7 +71,7 @@ public class ContactController {
             Integer count) {
 
         HubspotTokenResponse accessToken = hubSpotTokenService.getAccessToken();
-        return contactService.getContacts(accessToken.getAccessToken(), count);
+        return hubspotContactService.getContacts(accessToken.getAccessToken(), count);
     }
 
     @Operation(
@@ -117,7 +117,7 @@ public class ContactController {
             @Valid @RequestBody PropertiesDTO contactDTO) {
 
         HubspotTokenResponse accessToken = hubSpotTokenService.getAccessToken();
-        return contactService.createContact(accessToken.getAccessToken(), contactDTO);
+        return hubspotContactService.createContact(accessToken.getAccessToken(), contactDTO);
     }
 
 }

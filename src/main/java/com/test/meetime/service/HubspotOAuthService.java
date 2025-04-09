@@ -14,20 +14,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.net.URI;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 
 @Slf4j
 @Service
-public class OAuthService {
+public class HubspotOAuthService {
 
     @Autowired
     private HubSpotAuthClient hubSpotAuthClient;
 
     @Autowired
-    private HubSpotTokenService hubSpotTokenService;
+    private HubspotTokenService hubSpotTokenService;
 
     @Value("${hubspot.client-id}")
     private String clientId;
@@ -46,14 +45,6 @@ public class OAuthService {
                 + "&scope=" + URLEncoder.encode(scope, StandardCharsets.UTF_8);
         ;
         return  urlAuthorize;
-
-        //return oAuthService.generateAuthorizationUrl();
-
-      //  URI authorizationUri = URI.create(urlAuthorize);
-      //  return ResponseEntity.status(HttpStatus.FOUND)
-       //         .location(authorizationUri)
-       //         .build();
-        //return ResponseEntity.status(HttpStatus.OK).body(urlAuthorize);
     }
 
     public ResponseEntity<HubspotTokenResponse> exchangeAuthorizationCode(String code) {

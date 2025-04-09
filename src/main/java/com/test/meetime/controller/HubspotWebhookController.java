@@ -16,7 +16,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/webhook")
 @Tag(name = "Webhook", description = "Receives events sent from HubSpot.")
-public class WebhookController {
+public class HubspotWebhookController {
 
     @Operation(
             summary = "Receive HubSpot Webhook Events",

@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class ContactService {
+public class HubspotContactService {
 
     @Autowired
     private HubSpotContactClient hubSpotContactClient;
