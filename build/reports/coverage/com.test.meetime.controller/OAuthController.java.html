@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.net.URI;
 
@@ -20,7 +21,7 @@ import java.net.URI;
 @RequestMapping(&quot;/oauth&quot;)
 @Tag(name = &quot;Authorization&quot;, description = &quot;Endpoints responsible for the OAuth 2.0 authentication flow with HubSpot.&quot; +
         &quot;Includes the generation of the authorization URL and the handling of the callback to exchange the code for an access token.&quot;)
-<span class="fc" id="L23">public class OAuthController {</span>
+<span class="fc" id="L24">public class OAuthController {</span>
 
     @Autowired
     private OAuthService oAuthService;
@@ -43,10 +44,10 @@ import java.net.URI;
             method = RequestMethod.GET)
     public ResponseEntity&lt;Void&gt; generateAuthorizationUrl() {
 
-<span class="nc" id="L46">        URI authorizationUri = URI.create(oAuthService.generateAuthorizationUrl());</span>
-<span class="nc" id="L47">        return ResponseEntity.status(HttpStatus.FOUND)</span>
-<span class="nc" id="L48">                .location(authorizationUri)</span>
-<span class="nc" id="L49">                .build();</span>
+<span class="nc" id="L47">        URI authorizationUri = URI.create(oAuthService.generateAuthorizationUrl());</span>
+<span class="nc" id="L48">        return ResponseEntity.status(HttpStatus.FOUND)</span>
+<span class="nc" id="L49">                .location(authorizationUri)</span>
+<span class="nc" id="L50">                .build();</span>
 
     }
 
@@ -81,9 +82,10 @@ import java.net.URI;
             )
     })
     @GetMapping(&quot;/callback&quot;)
-    public ResponseEntity&lt;HubspotTokenResponse&gt; exchangeAuthorizationCode(
+    public RedirectView  exchangeAuthorizationCode(
             @RequestParam(&quot;code&quot;) String code) {
-<span class="nc" id="L86">        return oAuthService.exchangeAuthorizationCode(code);</span>
+<span class="nc" id="L87">        oAuthService.exchangeAuthorizationCode(code);</span>
+<span class="nc" id="L88">        return new RedirectView(&quot;/page.html&quot;); // Vai abrir a pÃ¡gina no navegador</span>
     }
 }
 

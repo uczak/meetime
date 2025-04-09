@@ -54,7 +54,7 @@ A aplicação utiliza o fluxo **Authorization Code Flow**, conforme documentaç�
 
 **Descrição do fluxo:**
 
-1. A aplicação gera a URL de autorização (`/auth/url`).
+1. A aplicação gera a URL de autorização (`/auth/url`). https://hubspot-api-968271651730.us-central1.run.app/oauth/authorize-url
 2. O usuário é redirecionado ao HubSpot e autoriza o app.
 3. O HubSpot envia o `code` ao endpoint de callback (`/auth/callback`).
 4. A aplicação troca o `code` pelo `access_token`. O token é armazenado em cache para reutilização em chamadas à API do HubSpot.
