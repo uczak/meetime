@@ -11,21 +11,21 @@ import lombok.NoArgsConstructor;
 public class HubspotContactCreateRequest {
 <span class="nc" id="L12">    private Properties properties;</span>
 
-<span class="nc bnc" id="L14" title="All 30 branches missed.">    @Data</span>
+<span class="pc bnc" id="L14" title="All 30 branches missed.">    @Data</span>
 <span class="nc" id="L15">    @AllArgsConstructor</span>
-<span class="nc" id="L16">    @NoArgsConstructor</span>
+<span class="fc" id="L16">    @NoArgsConstructor</span>
     public static class Properties {
 <span class="nc" id="L18">        private String email;</span>
 <span class="nc" id="L19">        private String firstname;</span>
 <span class="nc" id="L20">        private String lastname;</span>
     }
 
-<span class="nc" id="L23">    public HubspotContactCreateRequest(PropertiesDTO propertiesDTO) {</span>
-<span class="nc" id="L24">        Properties properties = new Properties();</span>
-<span class="nc" id="L25">        properties.setEmail(propertiesDTO.getEmail());</span>
-<span class="nc" id="L26">        properties.setFirstname(propertiesDTO.getFirstname());</span>
-<span class="nc" id="L27">        properties.setLastname(propertiesDTO.getLastname());</span>
-<span class="nc" id="L28">        this.properties = properties;</span>
-<span class="nc" id="L29">    }</span>
+<span class="fc" id="L23">    public HubspotContactCreateRequest(PropertiesDTO propertiesDTO) {</span>
+<span class="fc" id="L24">        Properties properties = new Properties();</span>
+<span class="fc" id="L25">        properties.setEmail(propertiesDTO.getEmail());</span>
+<span class="fc" id="L26">        properties.setFirstname(propertiesDTO.getFirstname());</span>
+<span class="fc" id="L27">        properties.setLastname(propertiesDTO.getLastname());</span>
+<span class="fc" id="L28">        this.properties = properties;</span>
+<span class="fc" id="L29">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

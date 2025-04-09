@@ -20,6 +20,6 @@ public interface HubSpotContactClient {
     @PostMapping(value = "/crm/v3/objects/contacts", produces = MediaType.APPLICATION_JSON_VALUE)
     HubspotContactCreateResponse createContact(
             @RequestHeader("Authorization") String authorization,
-            @RequestBody HubspotContactCreateRequest properties
+            @RequestBody HubspotContactCreateRequest hubspotContactCreateRequest
     );
 }

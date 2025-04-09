@@ -7,24 +7,24 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-<span class="nc bnc" id="L10" title="All 30 branches missed.">@Data</span>
+<span class="pc bnc" id="L10" title="All 30 branches missed.">@Data</span>
 public class PropertiesDTO {
 
     @JsonProperty(&quot;email&quot;)
     @NotBlank(message = &quot;Email is required&quot;)
     @Email(message = &quot;Invalid email format&quot;)
     @Size(max = 255, message = &quot;Email must be at most 255 characters long&quot;)
-<span class="nc" id="L17">    private String email;</span>
+<span class="fc" id="L17">    private String email;</span>
 
     @JsonProperty(&quot;lastname&quot;)
     @NotBlank(message = &quot;Last name is required&quot;)
     @Size(max = 100, message = &quot;Last name must be at most 100 characters long&quot;)
-<span class="nc" id="L22">    private String lastname;</span>
+<span class="fc" id="L22">    private String lastname;</span>
 
     @JsonProperty(&quot;firstname&quot;)
     @NotBlank(message = &quot;First name is required&quot;)
     @Size(max = 100, message = &quot;First name must be at most 100 characters long&quot;)
-<span class="nc" id="L27">    private String firstname;</span>
+<span class="fc" id="L27">    private String firstname;</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

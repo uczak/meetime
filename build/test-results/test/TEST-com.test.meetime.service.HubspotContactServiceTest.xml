@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.test.meetime.service.HubspotContactServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-04-09T21:39:57" hostname="RBSN3908" time="0.05">
+  <properties/>
+  <testcase name="createContactWithErrorAuth()" classname="com.test.meetime.service.HubspotContactServiceTest" time="0.038"/>
+  <testcase name="createContactWithSuccess()" classname="com.test.meetime.service.HubspotContactServiceTest" time="0.002"/>
+  <testcase name="getContactsWithSuccess()" classname="com.test.meetime.service.HubspotContactServiceTest" time="0.002"/>
+  <testcase name="getContactsWithErrorAuth()" classname="com.test.meetime.service.HubspotContactServiceTest" time="0.004"/>
+  <system-out><![CDATA[2025-04-09 18:39:57.849 ERROR 16916 --- [    Test worker] c.t.m.service.HubspotContactService      : Feign error from HubSpot: 
+2025-04-09 18:39:57.863 ERROR 16916 --- [    Test worker] c.t.m.service.HubspotContactService      : Feign error from HubSpot: 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
