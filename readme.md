@@ -18,12 +18,12 @@ Avaliar habilidades técnicas em:
 ## 🛠️ Melhorias Futuras
 - A API Webhook não esta utilizando os eventos que recebe, apenas grava logs. Poderimos implementar 
 um monitoramento para identificar o volume de contatos criados em um périodo X.
-- Em primeira melhoria poderiamos implemtar um Redis para armazenar o access_token.
-Para uma implementação mais solida podemos adicionar uma camada de identificação 
-do Client. A API atual não faz distinção de requisiçoes, e desta forma não consegue
-identificar qual o client que fez a primeira requisição e se autenticou. Poderiamos
-armazenar o access_token por User em um Banco não relacional, desta 
-forma saberiamos se o client já está autenticado.
+- Para um primeira melhoria, poderiamos implemtar um cache Redis para armazenar o access_token, que
+hoje está com spring cache, ou ja partir para uma implementação mais solida adicionar uma camada de identificação 
+do Client, porque a API atual não faz distinção de requisições, e desta forma não consegue
+identificar qual o client que fez a primeira requisição e se autenticou. A segunda requisição
+poderia vir de outro client. Para corrigir este ponto, poderiamos armazenar o access_token por User/client em um
+Banco não relacional, desta forma saberiamos se o client já está autenticado.
  
 
 ## ⚙️ Tecnologias Utilizadas
