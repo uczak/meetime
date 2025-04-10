@@ -99,6 +99,12 @@ ou utilize um client externo como Postman. Exemplo de requisição:
 Edite o arquivo `application.yml` como **DEV** para rodar locamente ou **HLG** para rodar em cloud.
 
 ---
+### Executar testes localmente
+- Execute o comando a seguir para rodar os testes unitários:
+  ```bash
+  ./gradlew test --info
+
+---
 ### Executar local
 - Limpa a lib gerada e executa um novo build:
   ```bash
